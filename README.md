@@ -14,7 +14,8 @@ https://desafiob2w.herokuapp.com/
 * DELETE '/planetas/:idPlaneta' - Apaga um planeta
 
 ## Objeto planeta
-* nome: {
+```js
+  nome: {
     type: String,
     required: 'Por favor, informe o nome do planeta'
   },
@@ -29,8 +30,8 @@ https://desafiob2w.herokuapp.com/
   aparicoes: { //Mantido pelas informações do swapi
     type: Number,
   }
-
-## Examples
+```
+## Exemplos
 
 * https://desafiob2w.herokuapp.com/planetas
 * https://desafiob2w.herokuapp.com/planetas/search/Tatoo

@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(app) {
-  var desafio = require('../controllers/planetaController');
+  var desafio = require('../controllers/PlanetaController');
 
   app.route('/planetas')
     .get(desafio.list)

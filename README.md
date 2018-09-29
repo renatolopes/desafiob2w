@@ -1,4 +1,4 @@
-## Desafio B2W - Star Wars API
+# Desafio B2W - Star Wars API
 
 API Rest em NODE.js que permite as operações de CRUD de um planeta e carrega a quantidade de aparições da "Star Wars API (swapi.co)".
 
@@ -35,7 +35,7 @@ https://desafiob2w.herokuapp.com/
 * https://desafiob2w.herokuapp.com/planetas
 * https://desafiob2w.herokuapp.com/planetas/search/Tatoo
 
-## Tests
+## Testes
 Os testes podem ser executados com o comando npm test.
 
 

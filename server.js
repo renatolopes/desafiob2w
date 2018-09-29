@@ -1,19 +1,17 @@
 var express = require('express'),
-  app = express(),
-  port = process.env.PORT || 8080,
-  mongoose = require('mongoose'),
-  Task = require('./api/models/PlanetaModel'), //created model loading here
-  bodyParser = require('body-parser');
-  
-  mongoose.set('useFindAndModify', false);
+app = express(),
+port = process.env.PORT || 8080,
+mongoose = require('mongoose'),
+Task = require('./api/models/PlanetaModel'), //created model loading here
+bodyParser = require('body-parser'),
+config = require('config');
 
-  // mongoose instance connection url connection
-  mongoose.Promise = global.Promise;
-  //mongoose.connect('mongodb://localhost/DesafioDB', { useNewUrlParser: true }); 
+mongoose.set('useFindAndModify', false);
 
-  mongoose.connect('mongodb://desafiousr:#desafio1@ds119273.mlab.com:19273/heroku_5865vkzv', { useNewUrlParser: true }); 
-
-
+// mongoose instance connection url connection
+mongoose.Promise = global.Promise;
+mongoose.connect(config.DBHost, { useNewUrlParser: true }); 
+ 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

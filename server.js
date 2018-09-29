@@ -5,11 +5,13 @@ var express = require('express'),
   Task = require('./api/models/PlanetaModel'), //created model loading here
   bodyParser = require('body-parser');
   
-// mongoose instance connection url connection
-mongoose.Promise = global.Promise;
-//mongoose.connect('mongodb://localhost/DesafioDB', { useNewUrlParser: true }); 
+  mongoose.set('useFindAndModify', false);
 
-mongoose.connect('mongodb://desafiousr:#desafio1@ds119273.mlab.com:19273/heroku_5865vkzv', { useNewUrlParser: true }); 
+  // mongoose instance connection url connection
+  mongoose.Promise = global.Promise;
+  mongoose.connect('mongodb://localhost/DesafioDB', { useNewUrlParser: true }); 
+
+  //mongoose.connect('mongodb://desafiousr:#desafio1@ds119273.mlab.com:19273/heroku_5865vkzv', { useNewUrlParser: true }); 
 
 
 

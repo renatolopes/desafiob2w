@@ -13,7 +13,7 @@ chai.use(chaiHttp);
 //Our parent block
 describe('Planetas', () => {
     beforeEach((done) => { //Before each test we empty the database
-        Planeta.remove({}, (err) => { 
+        Planeta.deleteMany({}, (err) => { 
            done();           
         });        
     });

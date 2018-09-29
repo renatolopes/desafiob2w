@@ -9,8 +9,9 @@ var request = require("request");
 
 exports.list = function(req, res) {
   Planeta.find({}, function(err, planeta) {
-    if (err)
+    if (err){
       res.send(err);
+    }
     res.json(planeta);
   });
 };
@@ -40,8 +41,9 @@ exports.create = function(req, res) {
       }
 
         novoPlaneta.save(function(err, planeta) {
-          if (err)
+          if (err){
             res.send(err);
+          }
           res.json(planeta);
         });
     });
@@ -50,18 +52,19 @@ exports.create = function(req, res) {
 
 exports.read = function(req, res) {
   Planeta.findById(req.params.idPlaneta).lean().exec(function(err, planeta) {
-    if (err)
+    if (err){
       res.send(err);
-
-      res.json(planeta);
+    }
+    res.json(planeta);
   });
 };
 
 exports.search = function(req, res) {
   console.log(req.params.termoBusca);
   Planeta.find({nome: { "$regex": req.params.termoBusca, "$options": "i" } }).lean().exec(function(err, planetas) {
-    if (err)
+    if (err){
       res.send(err);
+    }
 
     res.json(planetas);
   });
@@ -89,11 +92,13 @@ exports.update = function(req, res) {
         }
       }
 
-         Planeta.findOneAndUpdate({_id: req.params.idPlaneta}, req.body, {new: true}, function(err, planeta) {
-          if (err)
-            res.send(err);
-          res.json(planeta);
-        });
+      Planeta.findOneAndUpdate({_id: req.params.idPlaneta}, req.body, {new: true}, function(err, planeta) {
+        if (err){
+          res.send(err);
+        }
+
+        res.json(planeta);
+      });
     });
 };
 
@@ -102,8 +107,9 @@ exports.delete = function(req, res) {
   Planeta.remove({
     _id: req.params.idPlaneta
   }, function(err, planeta) {
-    if (err)
+    if (err){
       res.send(err);
+    }
     res.json({ message: 'Planeta successfully deleted' });
   });
 };
